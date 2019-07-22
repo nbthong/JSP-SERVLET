@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.msita.jspsetvlet.dao;
+package com.msita.jspservlet.dao;
 
 /**
  * @author thongnguyen
