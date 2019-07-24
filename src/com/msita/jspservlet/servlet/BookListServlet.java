@@ -32,8 +32,10 @@ public class BookListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// Get data from database Mysql
 		BookDAO bookDAO = new BookDAO();
-		ArrayList<Book> bookList = bookDAO.getAllUser();
+		ArrayList<Book> bookList = bookDAO.getAllBook();
+		// Forward to book list view
 		request.setAttribute("bookList", bookList);
 		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/booklist.jsp");
         dispatcher.forward(request, response);

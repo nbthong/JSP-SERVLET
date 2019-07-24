@@ -18,7 +18,7 @@ import com.msita.jspservlet.dbconnection.ConnectionFactory;
  *
  */
 public class BookDAO {
-	public ArrayList<Book> getAllUser(){
+	public ArrayList<Book> getAllBook(){
 		Connection connection = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
