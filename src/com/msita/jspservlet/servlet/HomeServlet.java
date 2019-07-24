@@ -29,7 +29,7 @@ public class HomeServlet extends HttpServlet{
 	   protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	           throws ServletException, IOException {
 	 
-	       RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/homepage.html");       
+	       RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/homepage.jsp");       
 	       dispatcher.forward(request, response);
 	        
 	   }

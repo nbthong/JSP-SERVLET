@@ -187,11 +187,11 @@ public class BookDAO {
 		}
 	}
 	
-	public void deleteUserList(int bookId) {
+	public void deleteBook(int bookId) {
 		Connection connection = null;
 		Statement statement = null;
 		try {
-			String sql = "DELETE FROM user WHERE id =" + bookId;
+			String sql = "DELETE FROM book WHERE id =" + bookId;
 			connection = ConnectionFactory.getConnection();
 			statement = connection.createStatement();
 			statement.executeUpdate(sql);
@@ -224,7 +224,7 @@ public class BookDAO {
 		book.setName(rs.getString(2));		
 		book.setAuthor(rs.getString(3));		
 		book.setPublisher(rs.getString(4));	
-		book.setPrice(rs.getInt(4));	
+		book.setPrice(rs.getInt(5));	
 		return book;
 	}
 }
