@@ -30,7 +30,7 @@
             <tr>
                <td colspan="2">                   
                    <input type="submit" value="Submit" />
-                   <a href="">Cancel</a>
+                   <a href="home">Cancel</a>
                </td>
             </tr>
          </table>

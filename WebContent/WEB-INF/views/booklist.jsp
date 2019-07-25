@@ -27,7 +27,7 @@
             <td>${book.author}</td>
             <td>${book.publisher}</td>
             <td>${book.price}</td>
-			<td><a href="editBook?id=${book.id}">Edit</a></td>
+			<td><a href="updateBook?id=${book.id}">Update</a></td>
 			<td><a href="deleteBook?id=${book.id}">Delete</a></td>
           </tr>
 		</c:forEach>

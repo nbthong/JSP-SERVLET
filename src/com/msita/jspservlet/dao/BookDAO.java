@@ -18,6 +18,53 @@ import com.msita.jspservlet.dbconnection.ConnectionFactory;
  *
  */
 public class BookDAO {
+	
+	public Book getBook(int id){
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		try {
+			connection = ConnectionFactory.getConnection();
+			String sql = "SELECT * FROM book WHERE id = ?";
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, id);
+			resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				Book book = convertToBook(resultSet);
+				return book;
+			}
+		} catch (SQLException e) {
+			//Handle errors for JDBC
+			e.printStackTrace();
+		} finally {
+			//finally block used to close resources
+	        if (resultSet != null) {
+                try {
+					resultSet.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+            }
+
+            if (preparedStatement != null) {
+            	try {
+            		preparedStatement.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+            }
+
+            if (connection != null) {
+            	try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+            }
+		}
+		
+		return null;
+	}
 	public ArrayList<Book> getAllBook(){
 		Connection connection = null;
 		Statement statement = null;
