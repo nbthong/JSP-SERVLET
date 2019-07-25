@@ -36,8 +36,8 @@ public class UpdateBookServlet extends HttpServlet {
 		
 		BookDAO bookDAO = new BookDAO();
 		Book book = bookDAO.getBook(id);
-		request.setAttribute("bookList", book);
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/booklist.jsp");
+		request.setAttribute("book", book);
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/updatebook.jsp");
         dispatcher.forward(request, response);
 	}
 
