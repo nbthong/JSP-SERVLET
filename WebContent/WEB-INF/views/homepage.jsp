@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8" session="false"
     pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +14,9 @@
 	
 	<a href="${pageContext.request.contextPath}/createBook">Create Book</a>
 	
+	<a href="${pageContext.request.contextPath}/login">Login</a>
+	
+	<a href="${pageContext.request.contextPath}/logout">Logout</a>
 	<div>
 		<form method="GET" action="${pageContext.request.contextPath}/searchBook">
          <table border="0">

@@ -5,4 +5,7 @@
     <welcome-file>home</welcome-file>
     <welcome-file>index.htm</welcome-file>
   </welcome-file-list>
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
 </web-app>
