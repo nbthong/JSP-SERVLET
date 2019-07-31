@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" session="false"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
@@ -8,6 +8,7 @@
 <title>Book list</title>
 </head>
 <body>
+	<h5>Hello, ${sessionScope.username}</h5>
 	<h2 style="text-align:center; color:blue;">BOOK LIST</h2>
 	
 	<table border="1" cellpadding="5" cellspacing="1">
@@ -32,5 +33,6 @@
           </tr>
 		</c:forEach>
     </table>
+	<a href="home">Cancel</a>
 </body>
 </html>

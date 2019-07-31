@@ -29,13 +29,11 @@ public class AuthenticationFilter implements Filter {
 			throws IOException, ServletException {
 		HttpServletRequest httpReq = (HttpServletRequest) request;
 		HttpSession session = httpReq.getSession(false);
-		if (session == null) {
-			System.out.println("null");
+		if (session != null && session.getAttribute("username")!= null) {
+			chain.doFilter(request,response); 
+		} else {
 			RequestDispatcher dispatcher = httpReq.getServletContext().getRequestDispatcher("/WEB-INF/views/login.jsp");
 	        dispatcher.forward(request, response);
-		} else {
-			System.out.println("not null");
-			chain.doFilter(request,response); 
 		}
 		
 	}

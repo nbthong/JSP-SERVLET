@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" session="false"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -7,6 +7,7 @@
 <title>Update book</title>
 </head>
 <body>
+	<h5>Hello, ${sessionScope.username}</h5>
 	<h2 style="text-align:center; color:blue;">UPDATE BOOK</h2>
 	
 	<form method="POST" action="${pageContext.request.contextPath}/updateBook">

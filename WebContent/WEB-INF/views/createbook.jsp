@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" session="false"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -7,6 +7,7 @@
 <title>Create book</title>
 </head>
 <body>
+	<h5>Hello, ${sessionScope.username}</h5>
 	<h2 style="text-align:center; color:blue;">CREATE BOOK</h2>
 	
 	<form method="POST" action="${pageContext.request.contextPath}/createBook">

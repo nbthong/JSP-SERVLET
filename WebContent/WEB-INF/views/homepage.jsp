@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" session="false"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
 <!DOCTYPE html>
@@ -8,7 +8,8 @@
 <title>Book management</title>
 </head>
 <body>
-	<h1 style="text-align:center; color:blue;">WELCOME TO HOME PAGE</h1>
+	<h5>Hello, ${sessionScope.username}</h5>
+	<h2 style="text-align:center; color:blue;">WELCOME TO HOME PAGE </h2>
 	
 	<a href="${pageContext.request.contextPath}/bookList">Book List</a>
 	

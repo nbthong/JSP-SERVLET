@@ -28,7 +28,8 @@ public class HomeServlet extends HttpServlet{
 	@Override
 	   protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	           throws ServletException, IOException {
-	 
+		String username = (String) request.getSession(false).getAttribute("username");
+		request.setAttribute("username", username);
 	       RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/homepage.jsp");       
 	       dispatcher.forward(request, response);
 	        
