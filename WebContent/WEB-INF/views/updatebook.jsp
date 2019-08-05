@@ -7,7 +7,7 @@
 <title>Update book</title>
 </head>
 <body>
-	<h5>Hello, ${sessionScope.username}</h5>
+	<jsp:include page="header.jsp" />
 	<h2 style="text-align:center; color:blue;">UPDATE BOOK</h2>
 	
 	<form method="POST" action="${pageContext.request.contextPath}/updateBook">
@@ -35,7 +35,6 @@
             <tr>
                <td colspan="2">                   
                    <input type="submit" value="Submit" />
-                   <a href="home">Cancel</a>
                </td>
             </tr>
          </table>

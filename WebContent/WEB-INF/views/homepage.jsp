@@ -8,16 +8,9 @@
 <title>Book management</title>
 </head>
 <body>
-	<h5>Hello, ${sessionScope.username}</h5>
+	<jsp:include page="header.jsp" />  
+
 	<h2 style="text-align:center; color:blue;">WELCOME TO HOME PAGE </h2>
-	
-	<a href="${pageContext.request.contextPath}/bookList">Book List</a>
-	
-	<a href="${pageContext.request.contextPath}/createBook">Create Book</a>
-	
-	<a href="${pageContext.request.contextPath}/login">Login</a>
-	
-	<a href="${pageContext.request.contextPath}/logout">Logout</a>
 	<div>
 		<form method="GET" action="${pageContext.request.contextPath}/searchBook">
          <table border="0">

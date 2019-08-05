@@ -8,7 +8,7 @@
 <title>Book list</title>
 </head>
 <body>
-	<h5>Hello, ${sessionScope.username}</h5>
+	<jsp:include page="header.jsp" />
 	<h2 style="text-align:center; color:blue;">BOOK LIST</h2>
 	
 	<table border="1" cellpadding="5" cellspacing="1">
@@ -33,6 +33,5 @@
           </tr>
 		</c:forEach>
     </table>
-	<a href="home">Cancel</a>
 </body>
 </html>

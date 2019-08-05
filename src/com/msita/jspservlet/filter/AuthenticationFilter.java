@@ -21,7 +21,7 @@ import javax.servlet.http.HttpSession;
  *
  */
 
-@WebFilter({"/home", "/bookList","/createBook","/deleteBook","/updateBook","/searchBook","/logout"})
+@WebFilter(filterName = "AuthenticationFilter", urlPatterns= {"/home", "/bookList","/createBook","/deleteBook","/updateBook","/searchBook","/logout"})
 public class AuthenticationFilter implements Filter {
 
 	@Override
