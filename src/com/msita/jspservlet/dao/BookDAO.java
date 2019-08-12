@@ -163,7 +163,7 @@ public class BookDAO {
 	public void insertBook(Book book){
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
-		String insertSQL = "INSERT INTO book (name,author,publisher,price) VALUES (?,?,?,?)";
+		String insertSQL = "INSERT INTO book (name,author,publisher,price,photo) VALUES (?,?,?,?,?)";
 		try {
 			connection = ConnectionFactory.getConnection();	
 			preparedStatement = connection.prepareStatement(insertSQL);
@@ -171,6 +171,7 @@ public class BookDAO {
 			preparedStatement.setString(2, book.getAuthor());
 			preparedStatement.setString(3, book.getPublisher());
 			preparedStatement.setInt(4, book.getPrice());
+			preparedStatement.setBytes(5, book.getPhoto());
 			preparedStatement.executeUpdate();
 	        
 		} catch (SQLException e) {
@@ -271,7 +272,9 @@ public class BookDAO {
 		book.setName(rs.getString(2));		
 		book.setAuthor(rs.getString(3));		
 		book.setPublisher(rs.getString(4));	
-		book.setPrice(rs.getInt(5));	
+		book.setPrice(rs.getInt(5));
+		byte[] imgData = rs.getBytes("photo");
+		book.setPhoto(imgData);
 		return book;
 	}
 }

@@ -1,3 +1,5 @@
+<%@page import="com.msita.jspservlet.bo.Book"%>
+<%@page import="org.apache.tomcat.util.codec.binary.Base64"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
@@ -11,7 +13,7 @@
 	<jsp:include page="header.jsp" />
 	<h2 style="text-align:center; color:blue;">BOOK LIST</h2>
 	
-	<table border="1" cellpadding="5" cellspacing="1">
+	<table border="1" cellpadding="8" cellspacing="1">
 		<tr>
           <th>ID</th>
           <th>Name</th>
@@ -21,13 +23,14 @@
 		  <th>Edit</th>
           <th>Delete</th>
 		</tr>
-		<c:forEach items="${bookList}" var="book" >
+		<c:forEach items="${bookList}" var="book">
           <tr>
             <td>${book.id}</td>
             <td>${book.name}</td>
             <td>${book.author}</td>
             <td>${book.publisher}</td>
             <td>${book.price}</td>
+			<td><img src="data:image/jpeg;base64,${book.photo}" width="170px" height="220px"/></td>
 			<td><a href="updateBook?id=${book.id}">Update</a></td>
 			<td><a href="deleteBook?id=${book.id}">Delete</a></td>
           </tr>

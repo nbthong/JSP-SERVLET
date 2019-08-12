@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.msita.jspservlet.bo;
+package com.msita.jspservlet.viewbo;
 
 import java.sql.Blob;
 
@@ -9,13 +9,13 @@ import java.sql.Blob;
  * @author thongnguyen
  *
  */
-public class Book {
+public class BookView {
 	private int id;
 	private String name;
 	private String author;
 	private String publisher;
 	private int price;
-	private byte[] photo;
+	private String photo;
 	
 	public int getId() {
 		return id;
@@ -47,10 +47,10 @@ public class Book {
 	public String getAuthor() {
 		return author;
 	}
-	public byte[] getPhoto() {
+	public String getPhoto() {
 		return photo;
 	}
-	public void setPhoto(byte[] photo) {
+	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
 	
