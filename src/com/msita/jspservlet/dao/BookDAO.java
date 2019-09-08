@@ -9,6 +9,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.sql.Date;
 
 import com.msita.jspservlet.bo.Book;
 import com.msita.jspservlet.dbconnection.ConnectionFactory;
@@ -163,7 +165,7 @@ public class BookDAO {
 	public void insertBook(Book book){
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
-		String insertSQL = "INSERT INTO book (name,author,publisher,price,photo) VALUES (?,?,?,?,?)";
+		String insertSQL = "INSERT INTO book (name,author,publisher,price,photo,create_date) VALUES (?,?,?,?,?,?)";
 		try {
 			connection = ConnectionFactory.getConnection();	
 			preparedStatement = connection.prepareStatement(insertSQL);
@@ -172,6 +174,7 @@ public class BookDAO {
 			preparedStatement.setString(3, book.getPublisher());
 			preparedStatement.setInt(4, book.getPrice());
 			preparedStatement.setBytes(5, book.getPhoto());
+			preparedStatement.setDate(6,book.getCreate());
 			preparedStatement.executeUpdate();
 	        
 		} catch (SQLException e) {

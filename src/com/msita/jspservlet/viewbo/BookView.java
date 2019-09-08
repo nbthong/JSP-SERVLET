@@ -15,6 +15,7 @@ public class BookView {
 	private String author;
 	private String publisher;
 	private int price;
+	private String createDate;
 	private String photo;
 	
 	public int getId() {
@@ -52,6 +53,18 @@ public class BookView {
 	}
 	public void setPhoto(String photo) {
 		this.photo = photo;
+	}
+	/**
+	 * @return the createDate
+	 */
+	public String getCreateDate() {
+		return createDate;
+	}
+	/**
+	 * @param createDate the createDate to set
+	 */
+	public void setCreateDate(String createDate) {
+		this.createDate = createDate;
 	}
 	
 }

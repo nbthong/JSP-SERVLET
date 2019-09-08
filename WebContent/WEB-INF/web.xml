@@ -9,7 +9,6 @@
     <session-timeout>30</session-timeout>
   </session-config>
  
-  
  	 <filter-mapping>
 	    <filter-name>AuthenticationFilter</filter-name>
 	    <url-pattern />
@@ -28,5 +27,4 @@
       <exception-type>java.lang.Exception</exception-type>
       <location>/WEB-INF/views/pageException.jsp</location>
    </error-page>
-
 </web-app>

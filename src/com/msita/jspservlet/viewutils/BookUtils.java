@@ -29,8 +29,13 @@ public class BookUtils {
 		bookView.setAuthor(book.getAuthor());		
 		bookView.setPublisher(book.getPublisher());	
 		bookView.setPrice(book.getPrice());
+		bookView.setCreateDate(book.getCreate().toString());
+		
 		String photoEncode=Base64.encodeBase64String(book.getPhoto());
+		
 		bookView.setPhoto(photoEncode);
+		
+		
 		return bookView;
 	}
 	

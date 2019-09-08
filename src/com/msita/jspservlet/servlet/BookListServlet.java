@@ -41,7 +41,9 @@ public class BookListServlet extends HttpServlet {
 		// Get data from database Mysql
 		BookDAO bookDAO = new BookDAO();
 		ArrayList<Book> bookList = bookDAO.getAllBook();
+		
 		ArrayList<BookView> bookViewList = BookUtils.convertToBookViewList(bookList);
+		
 		// Forward to book list view
 		request.setAttribute("bookList", bookViewList);
 		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/booklist.jsp");

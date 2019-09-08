@@ -1,12 +1,9 @@
-<%@page import="com.msita.jspservlet.bo.Book"%>
-<%@page import="org.apache.tomcat.util.codec.binary.Base64"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
 <title>Book list</title>
 </head>
 <body>
@@ -15,26 +12,30 @@
 	
 	<table border="1" cellpadding="8" cellspacing="1">
 		<tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Author</th>
-          <th>Publisher</th>
-          <th>Price</th>
+Â Â Â Â Â Â Â Â Â Â <th>ID</th>
+Â Â Â Â Â Â Â Â Â Â <th>Name</th>
+Â Â Â Â Â Â Â Â Â Â <th>Author</th>
+Â Â Â Â Â Â Â Â Â Â <th>Publisher</th>
+Â Â Â Â Â Â Â Â Â Â <th>Price</th>
+			<!-- <th>photo</th> -->
+		<th>Create</th>
 		  <th>Edit</th>
           <th>Delete</th>
 		</tr>
 		<c:forEach items="${bookList}" var="book">
-          <tr>
-            <td>${book.id}</td>
-            <td>${book.name}</td>
-            <td>${book.author}</td>
-            <td>${book.publisher}</td>
-            <td>${book.price}</td>
-			<td><img src="data:image/jpeg;base64,${book.photo}" width="170px" height="220px"/></td>
+Â Â Â Â Â Â Â Â Â Â <tr>
+Â Â Â Â Â Â Â Â Â Â Â Â <td>${book.id}</td>
+Â Â Â Â Â Â Â Â Â Â Â Â <td>${book.name}</td>
+Â Â Â Â Â Â Â Â Â Â Â Â <td>${book.author}</td>
+Â Â Â Â Â Â Â Â Â Â Â Â <td>${book.publisher}</td>
+Â Â Â Â Â Â Â Â Â Â Â Â <td>${book.price}</td>
+			<td>${book.create}</td>
+			<%-- <td><img src="data:image/jpeg;base64,${book.photo}" width="170px" height="220px"/></td> --%>
+			
 			<td><a href="updateBook?id=${book.id}">Update</a></td>
 			<td><a href="deleteBook?id=${book.id}">Delete</a></td>
-          </tr>
+Â Â Â Â Â Â Â Â Â Â </tr>
 		</c:forEach>
-    </table>
+Â Â Â Â </table>
 </body>
 </html>

@@ -3,7 +3,7 @@
  */
 package com.msita.jspservlet.bo;
 
-import java.sql.Blob;
+import java.sql.Date;
 
 /**
  * @author thongnguyen
@@ -16,6 +16,7 @@ public class Book {
 	private String publisher;
 	private int price;
 	private byte[] photo;
+	private Date create;
 	
 	public int getId() {
 		return id;
@@ -53,5 +54,12 @@ public class Book {
 	public void setPhoto(byte[] photo) {
 		this.photo = photo;
 	}
+	public Date getCreate() {
+		return create;
+	}
+	public void setCreate(Date create) {
+		this.create = create;
+	}
+	
 	
 }

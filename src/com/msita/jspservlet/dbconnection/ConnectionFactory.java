@@ -13,7 +13,7 @@ import java.sql.SQLException;
  */
 public class ConnectionFactory {
 	
-	public static final String URL = "jdbc:mysql://localhost:3306/jspservlet";
+	public static final String URL = "jdbc:mysql://localhost:3306/jspservlet?characterEncoding=UTF8";
     public static final String USER = "root";
     public static final String PASS = "thong1304";
     

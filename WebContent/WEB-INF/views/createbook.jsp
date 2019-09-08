@@ -1,10 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Create book</title>
+	<title>Create book</title>
 </head>
 <body>
 <jsp:include page="header.jsp" />
@@ -31,6 +29,10 @@
             <tr>
             	<td>Photo</td>
             	<td><input type="file" name="photo" size="50" placeholder="Upload Your Image" required/></td>
+            </tr>
+            <tr>
+            	<td>Create</td>
+            	<td><input type="date" name="create"/></td>
             </tr>
             <tr>
                <td colspan="2">                   

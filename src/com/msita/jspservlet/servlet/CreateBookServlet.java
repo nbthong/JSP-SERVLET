@@ -4,6 +4,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -45,31 +48,43 @@ public class CreateBookServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8"); 
+		
 		 String name = (String) request.getParameter("name");
 	     String author = (String) request.getParameter("author");
 	     String publisher = (String) request.getParameter("publisher");
 	     String priceStr = (String) request.getParameter("price");
 	     int price = Integer.parseInt(priceStr);
-	     InputStream inputStream = null;// input stream of the upload file
-	     // obtains the upload file part in this multipart request
+	     
+	     InputStream inputStream = null;
+	     
 	     Part filePart = request.getPart("photo");
+	     
 	     if (filePart != null) {
             // prints out some information for debugging
-            System.out.println(filePart.getName());
-            System.out.println(filePart.getSize());
-            System.out.println(filePart.getContentType());
 
-            //obtains input stream of the upload file
-            //the InputStream will point to a stream that contains
-            //the contents of the file
             inputStream = filePart.getInputStream();
          }
+	     
 	     Book newBook = new Book();
+	     String dateStr = (String) request.getParameter("create");
+	     System.out.println(dateStr);
+	     try {
+			Date create =new SimpleDateFormat("yyyy-MM-dd").parse(dateStr);
+			java.sql.Date sqlDate = new java.sql.Date(create.getTime());
+			newBook.setCreate(sqlDate);
+	     } catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+	     }   
+	     
+	     
 	     newBook.setName(name);
 	     newBook.setAuthor(author);
 	     newBook.setPublisher(publisher);
 	     newBook.setPrice(price);
 	     newBook.setPhoto(readFile(inputStream));
+	     
 	     BookDAO bookDAO = new BookDAO();
 	     bookDAO.insertBook(newBook);
 	     
